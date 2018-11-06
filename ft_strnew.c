@@ -6,7 +6,7 @@
 /*   By: vuslysty <vuslysty@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/30 18:51:37 by vuslysty          #+#    #+#             */
-/*   Updated: 2018/10/30 20:07:24 by vuslysty         ###   ########.fr       */
+/*   Updated: 2018/11/06 15:10:23 by vuslysty         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char		*ft_strnew(size_t size)
 {
 	char	*str;
 
-	str = ft_memalloc(size + 1);
+	str = (char*)ft_memalloc(size + 1);
 	if (str == NULL)
 		return (NULL);
 	else

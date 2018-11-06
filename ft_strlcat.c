@@ -6,7 +6,7 @@
 /*   By: vuslysty <vuslysty@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 20:07:09 by vuslysty          #+#    #+#             */
-/*   Updated: 2018/11/02 17:28:39 by vuslysty         ###   ########.fr       */
+/*   Updated: 2018/11/06 15:04:00 by vuslysty         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ size_t		ft_strlcat(char *dst, const char *src, size_t dstsize)
 
 	if (dst == NULL || src == NULL)
 		return (0);
-
 	len_dst = ft_strlen(dst);
 	len_src = ft_strlen(src);
 	if (len_dst >= dstsize)

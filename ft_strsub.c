@@ -6,7 +6,7 @@
 /*   By: vuslysty <vuslysty@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/31 12:35:16 by vuslysty          #+#    #+#             */
-/*   Updated: 2018/10/31 12:42:43 by vuslysty         ###   ########.fr       */
+/*   Updated: 2018/11/06 15:18:56 by vuslysty         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char		*ft_strsub(char const *s, unsigned int start, size_t len)
 
 	if (s == NULL)
 		return (NULL);
-	newstr = ft_memalloc(len + 1);
+	newstr = (char*)ft_memalloc(len + 1);
 	if (newstr == NULL)
 		return (NULL);
 	ft_strncpy(newstr, s + start, len);

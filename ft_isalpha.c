@@ -6,14 +6,14 @@
 /*   By: vuslysty <vuslysty@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/25 13:18:24 by vuslysty          #+#    #+#             */
-/*   Updated: 2018/10/25 13:28:09 by vuslysty         ###   ########.fr       */
+/*   Updated: 2018/11/06 14:18:14 by vuslysty         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int			ft_isalpha(int a)
+int	ft_isalpha(int a)
 {
-    if ((a >= 'a' && a <= 'z') || (a >= 'A' && a <= 'Z'))
+	if ((a >= 'a' && a <= 'z') || (a >= 'A' && a <= 'Z'))
 		return (1);
-    else
-        return (0);
+	else
+		return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: vuslysty <vuslysty@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/30 15:32:15 by vuslysty          #+#    #+#             */
-/*   Updated: 2018/11/01 14:35:30 by vuslysty         ###   ########.fr       */
+/*   Updated: 2018/11/06 14:25:48 by vuslysty         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 
 void		*ft_memalloc(size_t size)
 {
-    void	*mem;
+	void	*mem;
 
-    mem = (t_byte*)malloc(size);
-    if (mem == NULL)
-        return (NULL);
-    ft_bzero(mem, size);
-    return (mem);
+	mem = (t_byte*)malloc(size);
+	if (mem == NULL)
+		return (NULL);
+	ft_bzero(mem, size);
+	return (mem);
 }
-

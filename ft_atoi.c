@@ -6,23 +6,25 @@
 /*   By: vuslysty <vuslysty@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/26 14:07:09 by vuslysty          #+#    #+#             */
-/*   Updated: 2018/11/02 17:46:54 by vuslysty         ###   ########.fr       */
+/*   Updated: 2018/11/06 14:16:23 by vuslysty         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_is_whitespace(char c)
+static int				ft_is_whitespace(char c)
 {
-	return (c == ' ' || c == '\t' || c == '\n' ||
-			c == '\v' || c == '\f' || c == '\r');
+	if (c == ' ' || c == '\t' || c == '\n' ||
+		c == '\v' || c == '\f' || c == '\r')
+		return (1);
+	return (0);
 }
 
-int			ft_atoi(const char *str)
+int						ft_atoi(const char *str)
 {
-	unsigned long int		res;
-	int		i;
-	int		sign;
+	unsigned long int	res;
+	int					i;
+	int					sign;
 
 	res = 0;
 	sign = 1;

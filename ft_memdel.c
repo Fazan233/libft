@@ -6,7 +6,7 @@
 /*   By: vuslysty <vuslysty@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/30 18:39:15 by vuslysty          #+#    #+#             */
-/*   Updated: 2018/10/30 20:50:25 by vuslysty         ###   ########.fr       */
+/*   Updated: 2018/11/06 14:46:40 by vuslysty         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_memdel(void **ap)
 {
-    if (ap != NULL)
-    {
-        free(*ap);
-        *ap = NULL;
-    }
+	if (ap != NULL)
+	{
+		free(*ap);
+		*ap = NULL;
+	}
 }

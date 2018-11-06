@@ -6,7 +6,7 @@
 /*   By: vuslysty <vuslysty@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 18:44:51 by vuslysty          #+#    #+#             */
-/*   Updated: 2018/11/01 15:01:47 by vuslysty         ###   ########.fr       */
+/*   Updated: 2018/11/06 14:54:34 by vuslysty         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ char	*ft_strcat(char *s1, const char *s2)
 		i++;
 	while (*s2 != 0)
 		s1[i++] = *s2++;
-
 	s1[i] = '\0';
 	return (s1);
 }

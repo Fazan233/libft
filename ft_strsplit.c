@@ -6,11 +6,10 @@
 /*   By: vuslysty <vuslysty@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/01 18:56:26 by vuslysty          #+#    #+#             */
-/*   Updated: 2018/11/01 21:09:35 by vuslysty         ###   ########.fr       */
+/*   Updated: 2018/11/06 15:17:08 by vuslysty         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 static char	*skip_delim(char *str, char d)
@@ -27,7 +26,6 @@ static int	count_str_between_d(char *str, char d)
 	count = 0;
 	while (*str != '\0')
 	{
-		//	printf("%p ", str);
 		str = skip_delim(str, d);
 		if (*str != '\0')
 		{
