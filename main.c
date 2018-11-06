@@ -51,14 +51,19 @@ int main(void)
 //    t_list *newl = ft_lstmap(list, &plus1);
 //    printf("%s\n%s\n%p\n\n", newl->content, newl->next->content, newl->next->next);
 
-    char *str = (char*)malloc(15);
+//    char *str = (char*)malloc(15);
 //    ft_strlcat(str, "", 15);
 //    ft_strlcat(str, "lorem ipsum", 15);
-    memset(str, 'r', 6);
-    str[11] = 'q';
-    ft_strlcat(str, "lorem", 15);
-    write(1, str, 15);
+//    memset(str, 'r', 6);
+//    str[11] = 'q';
+//    ft_strlcat(str, "lorem", 15);
+//    write(1, str, 15);
+    t_list *list;
+
+    list = ft_strsplitlist("Hello**angry**wwwooooooorld***", '*');
     
+    ft_lstprint(list);
+   // ft_putnbr(ft_list_size(list));
     
     return (0);
 }
