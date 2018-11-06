@@ -14,8 +14,6 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	if (s1 == NULL || s2 == NULL)
-		return (0);
 	while (n--)
 	{
 		if (*(t_byte*)s1 != *(t_byte*)s2)

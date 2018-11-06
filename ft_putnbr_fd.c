@@ -6,7 +6,7 @@
 /*   By: vuslysty <vuslysty@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/01 17:17:36 by vuslysty          #+#    #+#             */
-/*   Updated: 2018/11/01 17:26:51 by vuslysty         ###   ########.fr       */
+/*   Updated: 2018/11/06 17:35:45 by vuslysty         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,11 @@ void		ft_putnbr_fd(int n, int fd)
 	int		sign;
 
 	sign = 1;
+	if (n == 0)
+	{
+		ft_putchar_fd('0', fd);
+		return ;
+	}
 	if (n < 0)
 	{
 		ft_putchar_fd('-', fd);

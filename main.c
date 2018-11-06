@@ -15,14 +15,14 @@
 #include <ctype.h>
 #include<stdlib.h>
 
-t_list *plus1(t_list *elem)
-{
-    t_list *list = ft_lstnew(elem->content, elem->content_size);
-    int i = -1;
-    while (((char*)list->content)[++i] != '\0')
-        ((char*)list->content)[i] = 'A';
-    return (list);
-}
+//t_list *plus1(t_list *elem)
+//{
+//    t_list *list = ft_lstnew(elem->content, elem->content_size);
+//    int i = -1;
+//    while (((char*)list->content)[++i] != '\0')
+//        ((char*)list->content)[i] = 'A';
+//    return (list);
+//}
 
 
 int main(void)
@@ -51,7 +51,14 @@ int main(void)
 //    t_list *newl = ft_lstmap(list, &plus1);
 //    printf("%s\n%s\n%p\n\n", newl->content, newl->next->content, newl->next->next);
 
-    printf("%i\n", ft_pow(-10, -5));
+    char *str = (char*)malloc(15);
+//    ft_strlcat(str, "", 15);
+//    ft_strlcat(str, "lorem ipsum", 15);
+    memset(str, 'r', 6);
+    str[11] = 'q';
+    ft_strlcat(str, "lorem", 15);
+    write(1, str, 15);
+    
     
     return (0);
 }

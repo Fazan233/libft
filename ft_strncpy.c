@@ -17,8 +17,6 @@ char	*ft_strncpy(char *dst, const char *src, size_t len)
 	int i;
 
 	i = 0;
-	if (dst == NULL || src == NULL)
-		return (NULL);
 	while (len > 0 && src[i] != '\0')
 	{
 		dst[i] = src[i];

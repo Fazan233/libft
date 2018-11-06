@@ -17,8 +17,6 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 	int i;
 
 	i = 0;
-	if (s1 == NULL || s2 == NULL)
-		return (NULL);
 	while (s1[i] != '\0')
 		i++;
 	while (n > 0 && *s2 != '\0')
