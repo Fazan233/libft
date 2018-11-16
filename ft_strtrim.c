@@ -6,13 +6,13 @@
 /*   By: vuslysty <vuslysty@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/31 12:54:45 by vuslysty          #+#    #+#             */
-/*   Updated: 2018/10/31 13:26:51 by vuslysty         ###   ########.fr       */
+/*   Updated: 2018/11/07 14:31:58 by vuslysty         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			ft_whitespaces(char const *s)
+static int	ft_whitespaces(char const *s)
 {
 	if (*s == '\n' || *s == ' ' || *s == '\t')
 		return (1);
@@ -32,7 +32,7 @@ char		*ft_strtrim(char const *s)
 	while (ft_whitespaces(&s[i]))
 		i++;
 	j = ft_strlen(s) - 1;
-	while (ft_whitespaces(&s[j]))
+	while (ft_whitespaces(&s[j]) && j >= 0)
 		j--;
 	if (i > j)
 	{

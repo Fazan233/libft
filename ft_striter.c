@@ -6,7 +6,7 @@
 /*   By: vuslysty <vuslysty@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/30 20:24:22 by vuslysty          #+#    #+#             */
-/*   Updated: 2018/10/30 20:42:09 by vuslysty         ###   ########.fr       */
+/*   Updated: 2018/11/07 14:40:48 by vuslysty         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,8 @@
 
 void		ft_striter(char *s, void (*f)(char*))
 {
-	size_t	i;
-
-	i = -1;
-	if (&s[i + 1] == NULL)
+	if (s == NULL || f == NULL)
 		return ;
-	while (s[++i] != '\0')
-		f(&s[i]);
+	while (*s != '\0')
+		f(s++);
 }
