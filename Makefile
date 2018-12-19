@@ -1,10 +1,9 @@
 NAME = libft.a
 
-$(NAME): all
-
-all:
+$(NAME):
 	gcc -Wall -Wextra -Werror -c *.c
 	ar rc $(NAME) *.o
+all: $(NAME)
 clean:
 	rm -f *.o
 fclean: clean

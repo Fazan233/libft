@@ -16,8 +16,11 @@ void		*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t	i;
 
-	i = -1;
-	while (++i < n)
-		((t_byte*)dst)[i] = ((t_byte*)src)[i];
+	i = 0;
+	while (i < n)
+	{
+		((t_byte *) dst)[i] = ((t_byte *) src)[i];
+		i++;
+	}
 	return (dst);
 }

@@ -6,7 +6,7 @@
 /*   By: vuslysty <vuslysty@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 14:37:53 by vuslysty          #+#    #+#             */
-/*   Updated: 2018/11/06 15:36:18 by vuslysty         ###   ########.fr       */
+/*   Updated: 2018/11/07 14:00:41 by vuslysty         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,12 @@ void					ft_lstadd(t_list **alst, t_list *new);
 void					ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list					*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int						ft_pow(int n, int pow);
+int						ft_list_size(t_list *list);
+void					ft_lstprintone(t_list *list);
+void					ft_lstprint(t_list *list);
+t_list					*ft_strsplitlist(char *str, char c);
+void					ft_lstadd_end(t_list **list, t_list *new);
+char					*ft_itoa_base(int nbr, int base);
+void                    sort_list(t_list **begin);
 
 #endif
