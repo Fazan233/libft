@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   conversion.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vuslysty <vuslysty@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/31 12:43:24 by vuslysty          #+#    #+#             */
-/*   Updated: 2018/10/31 12:53:05 by vuslysty         ###   ########.fr       */
+/*   Created: 2019/01/21 16:58:41 by vuslysty          #+#    #+#             */
+/*   Updated: 2019/01/26 16:39:03 by vuslysty         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char		*ft_strjoin(char const *s1, char const *s2)
+static void	set_conversation(t_format *f, int const *i)
 {
-	char	*newstr;
+	int count;
 
-	if (s1 == NULL || s2 == NULL)
-		return (NULL);
-	newstr = ft_memalloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (newstr == NULL)
-		return (NULL);
-	ft_strcpy(newstr, s1);
-	ft_strcat(newstr, s2);
-	return (newstr);
+	count = -1;
+	while (++count < 17)
+		*i == count ? f->type = count : 0;
+}
+
+int			conversion(t_format *form, char **str)
+{
+	int	i;
+
+	i = -1;
+	while (CONVERSIONS[++i] != '\0')
+		if (CONVERSIONS[i] == **str)
+		{
+			set_conversation(form, &i);
+			*str = *str + 1;
+			return (1);
+		}
+	return (0);
 }

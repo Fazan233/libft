@@ -6,13 +6,15 @@
 /*   By: vuslysty <vuslysty@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 14:37:53 by vuslysty          #+#    #+#             */
-/*   Updated: 2018/11/07 14:00:41 by vuslysty         ###   ########.fr       */
+/*   Updated: 2019/01/21 20:17:22 by vuslysty         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include "get_next_line.h"
+# include "ft_printf.h"
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -94,6 +96,19 @@ void					ft_lstprint(t_list *list);
 t_list					*ft_strsplitlist(char *str, char c);
 void					ft_lstadd_end(t_list **list, t_list *new);
 char					*ft_itoa_base(int nbr, int base);
-void                    sort_list(t_list **begin);
+void					sort_list(t_list **begin);
+void					*ft_memalloc_chr(size_t size, char c);
+char					*ft_ultoa_base(unsigned long long n, int base);
+char					*ft_ltoa_base(long long n, int base);
+char					write_digit_base(int n);
+void					ft_strtoupper(char *str);
+void					*ft_memjoin(void *mem1, size_t len1, void *mem2,
+									size_t len2);
+void					*ft_memdup(void *mem, size_t len);
+void					ft_putmem(void *mem, size_t len);
+void					ft_strreverse(char *str);
+char					*ft_strjoin_free(char *s1, char *s2, int mode);
+size_t					ft_unistrlen(unsigned char *str);
+void					ft_putmem_fd(void *mem, size_t len, int fd);
 
 #endif

@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   precision.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vuslysty <vuslysty@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/31 13:43:31 by vuslysty          #+#    #+#             */
-/*   Updated: 2018/10/31 14:00:59 by vuslysty         ###   ########.fr       */
+/*   Created: 2019/01/21 19:42:03 by vuslysty          #+#    #+#             */
+/*   Updated: 2019/01/21 19:42:08 by vuslysty         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void		ft_putchar(size_t c)
+void	precision(t_format *form, char **str, va_list *ap)
 {
-	write(1, &c, 1);
+	form->precision = 1;
+	*str = *str + 1;
+	if (**str == '*')
+	{
+		form->p_val = va_arg(*ap, int);
+		*str = *str + 1;
+	}
+	else
+	{
+		form->p_val = ft_atoi(*str);
+		while (ft_isdigit(**str))
+			*str = *str + 1;
+	}
 }

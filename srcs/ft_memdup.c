@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstprint.c                                      :+:      :+:    :+:   */
+/*   ft_memdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vuslysty <vuslysty@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/06 21:46:47 by vuslysty          #+#    #+#             */
-/*   Updated: 2018/11/06 21:51:22 by vuslysty         ###   ########.fr       */
+/*   Created: 2019/01/21 20:04:29 by vuslysty          #+#    #+#             */
+/*   Updated: 2019/01/21 20:05:12 by vuslysty         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstprint(t_list *list)
+void	*ft_memdup(void *mem, size_t len)
 {
-	int	i;
+	void	*tmp;
 
-	i = 0;
-	if (!list)
-		return ;
-	while (list)
-	{
-		ft_putnbr(++i);
-		ft_putstr(" -> ");
-        ft_putstr(list->content);
-        ft_putstr("    ");
-        ft_putnbr((int)list->content_size);
-		ft_putchar('\n');
-		list = list->next;
-	}
+	tmp = malloc(len);
+	ft_memmove(tmp, mem, len);
+	return (tmp);
 }

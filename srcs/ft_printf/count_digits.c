@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   count_digits.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vuslysty <vuslysty@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/29 16:14:39 by vuslysty          #+#    #+#             */
-/*   Updated: 2018/11/01 14:21:42 by vuslysty         ###   ########.fr       */
+/*   Created: 2019/01/21 16:59:33 by vuslysty          #+#    #+#             */
+/*   Updated: 2019/01/21 18:41:29 by vuslysty         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		*ft_memcpy(void *dst, const void *src, size_t n)
+int	count_digits(size_t digit)
 {
-	size_t	i;
+	int	len;
 
-	i = 0;
-	while (i < n)
+	len = 0;
+	while (digit / 10 > 0)
 	{
-		((t_byte *) dst)[i] = ((t_byte *) src)[i];
-		i++;
+		len++;
+		digit /= 10;
 	}
-	return (dst);
+	return (++len);
 }

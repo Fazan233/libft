@@ -1,52 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
+/*   ft_longtoa_base.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vuslysty <vuslysty@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/07 13:08:02 by vuslysty          #+#    #+#             */
-/*   Updated: 2018/11/07 14:14:45 by vuslysty         ###   ########.fr       */
+/*   Created: 2019/01/21 19:56:51 by vuslysty          #+#    #+#             */
+/*   Updated: 2019/01/26 19:17:53 by vuslysty         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	write_digit_base(int n)
+static void	rec_ltoa_base(long long n, int base, char **str, int *len)
 {
-	if (n >= 0 && n <= 9)
-		return ('0' + n);
-	else
-		return ('A' + (n - 10));
-}
+	int		tmp;
 
-static void	rec_itoa_base(unsigned int nbr, int base, int *len,
-									char **str)
-{
 	(*len)++;
-	if (nbr < (unsigned int)base)
-		*str = (char*)ft_memalloc(sizeof(char) * (*len + 1));
+	if (n > 0 ? n < base : n > -base)
+	{
+		*str = (char*)ft_memalloc(((size_t)(n > 0 ? *len : ++(*len)) + 1));
+		if (n < 0)
+			*((*str)++) = '-';
+	}
 	else
-		rec_itoa_base(nbr / base, base, len, str);
-	**str = write_digit_base((int)(nbr % base));
+		rec_ltoa_base(n / base, base, str, len);
+	if (n < -9223372036854775807)
+		tmp = 8;
+	else
+		tmp = (n > 0 ? n : -n) % base;
+	**str = write_digit_base(tmp);
 	(*str)++;
 }
 
-char		*ft_itoa_base(int nbr, int base)
+char		*ft_ltoa_base(long long n, int base)
 {
 	char	*str;
 	int		len;
 
 	len = 0;
-	if (base == 10)
-		return (ft_itoa(nbr));
-	if (nbr == 0)
+	if (n == 0)
 		return (ft_strdup("0"));
 	if (base < 2 || base > 16)
 		return (NULL);
-	if (nbr < 0)
-		nbr = -nbr;
-	rec_itoa_base((unsigned int)nbr, base, &len, &str);
-	*str = '\0';
+	rec_ltoa_base(n, base, &str, &len);
 	return (str - len);
 }

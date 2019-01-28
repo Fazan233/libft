@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   cast_signed.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vuslysty <vuslysty@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/24 18:28:07 by vuslysty          #+#    #+#             */
-/*   Updated: 2018/11/06 15:02:40 by vuslysty         ###   ########.fr       */
+/*   Created: 2019/01/21 16:53:59 by vuslysty          #+#    #+#             */
+/*   Updated: 2019/01/21 16:54:26 by vuslysty         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char		*ft_strdup(const char *s1)
+void	cast_signed(long long int *n, va_list *ap, t_format *f)
 {
-	char	*str;
-	int		i;
-
-	str = (char*)ft_memalloc(sizeof(char) * ft_strlen(s1) + 1);
-	if (str == NULL)
-		return (NULL);
-	i = -1;
-	while (s1[++i] != '\0')
-		str[i] = s1[i];
-	str[i] = '\0';
-	return (str);
+	*n = va_arg(*ap, long long int);
+	if (f->size)
+	{
+		if (f->s_val == 0)
+			*n = (char)*n;
+		else if (f->s_val == 1)
+			*n = (short int)*n;
+		else if (f->s_val == 3)
+			*n = (long int)*n;
+		else if (f->s_val == 4 || f->s_val == 5 || f->s_val == 6)
+			*n = (int)*n;
+	}
+	else
+		*n = (int)*n;
 }
