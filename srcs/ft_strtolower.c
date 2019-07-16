@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_strtolower.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vuslysty <vuslysty@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/02 17:49:33 by vuslysty          #+#    #+#             */
-/*   Updated: 2018/11/02 18:27:25 by vuslysty         ###   ########.fr       */
+/*   Created: 2019/05/19 20:01:50 by vuslysty          #+#    #+#             */
+/*   Updated: 2019/05/19 20:01:52 by vuslysty         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-t_list		*ft_lstnew(void const *content, size_t content_size)
+void	ft_strtolower(char *str)
 {
-	t_list	*list;
-
-	list = (t_list*)ft_memalloc(sizeof(t_list));
-	if (list)
+	while (*str)
 	{
-		list->next = NULL;
-		list->content = (void*)content;
-		list->content_size = content_size;
+		if (*str >= 'A' && *str <= 'Z')
+			*str = 'a' + (*str - 'A');
+		str++;
 	}
-	return (list);
 }

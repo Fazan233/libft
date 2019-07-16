@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_count_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vuslysty <vuslysty@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/02 17:49:33 by vuslysty          #+#    #+#             */
-/*   Updated: 2018/11/02 18:27:25 by vuslysty         ###   ########.fr       */
+/*   Created: 2019/07/12 17:57:37 by vuslysty          #+#    #+#             */
+/*   Updated: 2019/07/12 17:57:39 by vuslysty         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-t_list		*ft_lstnew(void const *content, size_t content_size)
+int		ft_count_char(char *str, char c)
 {
-	t_list	*list;
+	int		i;
 
-	list = (t_list*)ft_memalloc(sizeof(t_list));
-	if (list)
+	i = 0;
+	while (*str != '\0')
 	{
-		list->next = NULL;
-		list->content = (void*)content;
-		list->content_size = content_size;
+		if (*str == c)
+			i++;
+		str++;
 	}
-	return (list);
+	return (i);
 }
