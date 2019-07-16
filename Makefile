@@ -1,5 +1,5 @@
 NAME = libft.a
-FLAGS = -Wall -Wextra -Werror
+FLAGS =  -Wall -Wextra -Werror
 SRCS = ./srcs/ft_atoi.c\
 		./srcs/ft_bzero.c\
 		./srcs/ft_isalnum.c\
